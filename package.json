@@ -1,0 +1,43 @@
+{ 
+  "name": "ai-business-manager-ultimate", 
+  "version": "1.0.0", 
+  "description": "AI Business Manager Ultimate 2026 - Complete Enterprise Solution", 
+  "main": "index.js", 
+  "scripts": { 
+    "start": "node backend/api-gateway/server.js", 
+    "dev": "nodemon backend/api-gateway/server.js", 
+    "test": "jest", 
+    "test:unit": "jest tests/unit", 
+    "test:integration": "jest tests/integration", 
+    "test:e2e": "jest tests/e2e", 
+    "lint": "eslint .", 
+    "format": "prettier --write .", 
+    "docker:build": "docker-compose build", 
+    "docker:up": "docker-compose up -d", 
+    "docker:down": "docker-compose down", 
+    "k8s:deploy": "kubectl apply -f config/kubernetes/", 
+    "k8s:delete": "kubectl delete -f config/kubernetes/" 
+  }, 
+  "keywords": [ 
+    "ai", 
+    "business", 
+    "manager", 
+    "crm", 
+    "erp", 
+    "microservices", 
+    "react", 
+    "node", 
+    "mongodb", 
+    "docker", 
+    "kubernetes" 
+  ], 
+  "author": "marwen240520-bot", 
+  "license": "MIT", 
+  "devDependencies": { 
+    "jest": "^29.0.0", 
+    "supertest": "^6.0.0", 
+    "eslint": "^8.0.0", 
+    "prettier": "^3.0.0", 
+    "nodemon": "^3.0.0" 
+  } 
+} 
