@@ -1,0 +1,35 @@
+const express = require('express'); 
+const mongoose = require('mongoose'); 
+const helmet = require('helmet'); 
+const cors = require('cors'); 
+const dotenv = require('dotenv'); 
+const routes = require('./routes'); 
+const logger = require('./utils/logger'); 
+ 
+dotenv.config(); 
+ 
+const app = express(); 
+ 
+app.use(helmet()); 
+app.use(cors({ 
+  credentials: true 
+})); 
+app.use(express.json()); 
+ 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true 
+}).then(() =
+  logger.info('MongoDB connected successfully'); 
+}).catch(err =
+  logger.error('MongoDB connection error:', err); 
+}); 
+ 
+app.use('/api', routes); 
+ 
+app.get('/health', (req, res) =
+  res.json({ status: 'OK', service: 'ERP Service', timestamp: new Date().toISOString() }); 
+}); 
+ 
+app.listen(PORT, () =
+  logger.info(`ERP Service running on http://localhost:${PORT}`); 
+}); 

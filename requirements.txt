@@ -1,0 +1,7 @@
+flask 
+flask-cors 
+flask-restful 
+numpy 
+pandas 
+scikit-learn 
+tensorflow 
